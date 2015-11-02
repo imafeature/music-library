@@ -37667,3 +37667,849 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
 
 
 Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:42:31 -0700
+
+
+Started DELETE "/albums/21" for ::1 at 2015-11-02 14:44:49 -0700
+Processing by AlbumsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"HPKQYdvlgL3Doqw7gxkw6709O2OVB45USOMHiSTDxMOTODbFjWy6qtcjD2C7DN2/lIH8KYWnwntRuQ+If3Nypw==", "id"=>"21"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1  [["id", "21"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "albums_artists" WHERE "albums_artists"."album_id" = ?  [["album_id", 21]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "albums" WHERE "albums"."id" = ?[0m  [["id", 21]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/albums
+Completed 302 Found in 21ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/albums" for ::1 at 2015-11-02 14:44:49 -0700
+Processing by AlbumsController#index as HTML
+  [1m[36mAlbum Load (0.2ms)[0m  [1mSELECT "albums".* FROM "albums"[0m
+  [1m[35mLabel Load (0.1ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLabel Load (0.1ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 17]]
+  Rendered albums/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 87ms (Views: 85.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/artist.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/label.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/labels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/scaffolds.self-7993ae6b14bcd7943d9f20296226ba65379e7335a562e84baaa09b3af482d227.css?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/songs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/album.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/album.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/artist.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/label.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/labels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/songs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 14:44:50 -0700
+
+
+Started DELETE "/albums/23" for ::1 at 2015-11-02 14:44:52 -0700
+Processing by AlbumsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gD3jskMY7s+Ni6wQhNADRKFbHc7De4X4L/mxk14L7wkP90UWFZHU2JkKD0u8xe4QiOfahNPbydc2o7mSBbtZbQ==", "id"=>"23"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1[0m  [["id", 23]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1  [["id", "23"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "albums_artists" WHERE "albums_artists"."album_id" = ?  [["album_id", 23]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "albums" WHERE "albums"."id" = ?[0m  [["id", 23]]
+  [1m[35m (8.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/albums
+Completed 302 Found in 12ms (ActiveRecord: 9.1ms)
+
+
+Started GET "/albums" for ::1 at 2015-11-02 14:44:52 -0700
+Processing by AlbumsController#index as HTML
+  [1m[36mAlbum Load (0.2ms)[0m  [1mSELECT "albums".* FROM "albums"[0m
+  [1m[35mLabel Load (0.1ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLabel Load (0.1ms)[0m  [1mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1[0m  [["id", 17]]
+  Rendered albums/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 74ms (Views: 73.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/artist.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/album.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/label.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/songs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/labels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/scaffolds.self-7993ae6b14bcd7943d9f20296226ba65379e7335a562e84baaa09b3af482d227.css?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/album.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/artist.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/label.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/songs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started GET "/assets/labels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:53 -0700
+
+
+Started DELETE "/albums/24" for ::1 at 2015-11-02 14:44:56 -0700
+Processing by AlbumsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/WxZbRfYSgA/BCIPYBurIk1WZCVN2bzlPLdhi3MhF0Vypv/JQVFwFyuFgVRYDkZ2ZOqjb1158Mol7WmKKJGhIQ==", "id"=>"24"}
+  [1m[35mAlbum Load (0.1ms)[0m  SELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1  [["id", 24]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM "albums_artists" WHERE "albums_artists"."album_id" = ?[0m  [["album_id", 24]]
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "albums" WHERE "albums"."id" = ?  [["id", 24]]
+  [1m[36m (0.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/albums
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/albums" for ::1 at 2015-11-02 14:44:56 -0700
+Processing by AlbumsController#index as HTML
+  [1m[35mAlbum Load (0.1ms)[0m  SELECT "albums".* FROM "albums"
+  [1m[36mLabel Load (0.0ms)[0m  [1mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLabel Load (0.0ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 17]]
+  Rendered albums/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 87ms (Views: 86.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/album.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/label.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/labels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/artist.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/scaffolds.self-7993ae6b14bcd7943d9f20296226ba65379e7335a562e84baaa09b3af482d227.css?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/songs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/album.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/artist.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/label.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/labels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/songs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 14:44:56 -0700
+
+
+Started DELETE "/albums/25" for ::1 at 2015-11-02 14:45:01 -0700
+Processing by AlbumsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CSQoA/buR9NeUtoMVNXrNYIeeiWeb3RZJmPq5lHzn02G7o6noGd9xErTeVdswAZhq6K9b47POHY/OeLnCkMpKQ==", "id"=>"25"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1  [["id", "25"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.0ms)[0m  DELETE FROM "albums_artists" WHERE "albums_artists"."album_id" = ?  [["album_id", 25]]
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "albums" WHERE "albums"."id" = ?[0m  [["id", 25]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/albums
+Completed 302 Found in 3ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/albums" for ::1 at 2015-11-02 14:45:01 -0700
+Processing by AlbumsController#index as HTML
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT "albums".* FROM "albums"[0m
+  [1m[35mLabel Load (0.0ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 17]]
+  Rendered albums/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 61ms (Views: 60.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/album.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/labels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/artist.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/label.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/scaffolds.self-7993ae6b14bcd7943d9f20296226ba65379e7335a562e84baaa09b3af482d227.css?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/songs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/album.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/artist.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/label.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/labels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/songs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:45:01 -0700
+
+
+Started GET "/labels" for ::1 at 2015-11-02 14:47:01 -0700
+Processing by LabelsController#index as HTML
+  [1m[36mLabel Load (0.3ms)[0m  [1mSELECT "labels".* FROM "labels"[0m
+  Rendered labels/index.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 67ms (Views: 64.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/album.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/artist.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/label.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/labels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/scaffolds.self-7993ae6b14bcd7943d9f20296226ba65379e7335a562e84baaa09b3af482d227.css?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/songs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/album.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/label.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/songs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/artist.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started GET "/assets/labels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:01 -0700
+
+
+Started DELETE "/labels/19" for ::1 at 2015-11-02 14:47:05 -0700
+Processing by LabelsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KwUq7PSnVdyJC893QTYlLSL/HHF8OzMv8yawBorzyB6kz4xIoi5vy52KbCx5I8h5C0PbO2ybfwDqfLgH0UN+eg==", "id"=>"19"}
+  [1m[35mLabel Load (0.1ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 19]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "labels" WHERE "labels"."id" = ?  [["id", 19]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/labels
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/labels" for ::1 at 2015-11-02 14:47:05 -0700
+Processing by LabelsController#index as HTML
+  [1m[35mLabel Load (0.1ms)[0m  SELECT "labels".* FROM "labels"
+  Rendered labels/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 80ms (Views: 79.1ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/labels/18" for ::1 at 2015-11-02 14:47:07 -0700
+Processing by LabelsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"M68ctmhvKhBg1HsHE9p7wdunZy/U3U++IfphgiKaXOm8ZboSPuYQB3RV2Fwrz5aV8hugZcR9A5E4oGmDeSrqjQ==", "id"=>"18"}
+  [1m[36mLabel Load (0.1ms)[0m  [1mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1[0m  [["id", 18]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "labels" WHERE "labels"."id" = ?[0m  [["id", 18]]
+  [1m[35m (7.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/labels
+Completed 302 Found in 10ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/labels" for ::1 at 2015-11-02 14:47:07 -0700
+Processing by LabelsController#index as HTML
+  [1m[36mLabel Load (0.1ms)[0m  [1mSELECT "labels".* FROM "labels"[0m
+  Rendered labels/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 61ms (Views: 60.5ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/labels/20" for ::1 at 2015-11-02 14:47:08 -0700
+Processing by LabelsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KTrqXGVup5fxGqPXNqdtgxjGVp0IpcIRM8wQFbuwW42m8Ez4M+edgOWbAIwOsoDXMXqR1xgFjj4qlhgU4ADt6Q==", "id"=>"20"}
+  [1m[35mLabel Load (0.1ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 20]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "labels" WHERE "labels"."id" = ?  [["id", 20]]
+  [1m[36m (28.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/labels
+Completed 302 Found in 31ms (ActiveRecord: 29.2ms)
+
+
+Started GET "/labels" for ::1 at 2015-11-02 14:47:08 -0700
+Processing by LabelsController#index as HTML
+  [1m[35mLabel Load (0.1ms)[0m  SELECT "labels".* FROM "labels"
+  Rendered labels/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 62ms (Views: 61.4ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/labels/21" for ::1 at 2015-11-02 14:47:09 -0700
+Processing by LabelsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Q12nCsUhF9qOkTxRl7Pieatq+l9V/0u8AG+rK6Y6VtDMlwGuk6gtzZoQnwqvpg8tgtY9FUVfB5MZNaMq/YrgtA==", "id"=>"21"}
+  [1m[36mLabel Load (0.1ms)[0m  [1mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "labels" WHERE "labels"."id" = ?[0m  [["id", 21]]
+  [1m[35m (7.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/labels
+Completed 302 Found in 10ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/labels" for ::1 at 2015-11-02 14:47:09 -0700
+Processing by LabelsController#index as HTML
+  [1m[36mLabel Load (0.2ms)[0m  [1mSELECT "labels".* FROM "labels"[0m
+  Rendered labels/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 63ms (Views: 62.5ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/labels/22" for ::1 at 2015-11-02 14:47:11 -0700
+Processing by LabelsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7yrzje2jg+oV2yuIDlm+SOrh7hi3s/V6X1dXdsq/aN5g4FUpuyq5/QFaiNM2TFMcw10pUqcTuVVGDV93kQ/eug==", "id"=>"22"}
+  [1m[35mLabel Load (0.1ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "labels" WHERE "labels"."id" = ?  [["id", 22]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/labels
+Completed 302 Found in 3ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/labels" for ::1 at 2015-11-02 14:47:11 -0700
+Processing by LabelsController#index as HTML
+  [1m[35mLabel Load (0.1ms)[0m  SELECT "labels".* FROM "labels"
+  Rendered labels/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 66ms (Views: 65.8ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/labels/23" for ::1 at 2015-11-02 14:47:12 -0700
+Processing by LabelsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"m6OOg1CBGaTrDLKsXFGC4ru/iNkMhOpkz4nBnOxDaLUUaSgnBggjs/+NEfdkRG+2kgNPkxwkpkvW08mdt/Pe0Q==", "id"=>"23"}
+  [1m[36mLabel Load (0.1ms)[0m  [1mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1[0m  [["id", 23]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "labels" WHERE "labels"."id" = ?[0m  [["id", 23]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/labels
+Completed 302 Found in 3ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/labels" for ::1 at 2015-11-02 14:47:12 -0700
+Processing by LabelsController#index as HTML
+  [1m[36mLabel Load (0.1ms)[0m  [1mSELECT "labels".* FROM "labels"[0m
+  Rendered labels/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 82ms (Views: 81.7ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/labels/24" for ::1 at 2015-11-02 14:47:13 -0700
+Processing by LabelsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Zy4O8Lhk1inDH1CqfPMPaV/hDm7baQLuVGB7SyAZui/o5KhU7u3sPtee8/FE5uI9dl3JJMvJTsFNOnNKe6kMSw==", "id"=>"24"}
+  [1m[35mLabel Load (0.1ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 24]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "labels" WHERE "labels"."id" = ?  [["id", 24]]
+  [1m[36m (8.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/labels
+Completed 302 Found in 10ms (ActiveRecord: 8.4ms)
+
+
+Started GET "/labels" for ::1 at 2015-11-02 14:47:13 -0700
+Processing by LabelsController#index as HTML
+  [1m[35mLabel Load (0.1ms)[0m  SELECT "labels".* FROM "labels"
+  Rendered labels/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 62ms (Views: 61.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/albums/new" for ::1 at 2015-11-02 14:47:19 -0700
+Processing by AlbumsController#new as HTML
+  [1m[36mLabel Load (0.1ms)[0m  [1mSELECT "labels".* FROM "labels"[0m
+  Rendered albums/_form.html.erb (4.1ms)
+  Rendered albums/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 76ms (Views: 66.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/albums" for ::1 at 2015-11-02 14:47:48 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1wCaV/NTYcUgAHN6xRtZkMRlZ3vmR9bWF+if29+z8AJYyjzzpdpb0jSB0CH9DrTE7dmgMfbnmvkOspfahANGZg==", "new_label"=>"Fueled By Ramen", "album"=>{"title"=>"Misery Business", "artist"=>"Paramore", "genre"=>"Rock", "year"=>"2008", "added"=>"2015-11-02", "plays"=>"0"}, "create"=>"Create"}
+  [1m[35mLabel Exists (0.1ms)[0m  SELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT 1  [["name", "Fueled By Ramen"]]
+  [1m[36mLabel Load (0.1ms)[0m  [1mSELECT  "labels".* FROM "labels" WHERE "labels"."name" = ?  ORDER BY "labels"."id" ASC LIMIT 1[0m  [["name", "Fueled By Ramen"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "albums" ("title", "artist", "genre", "year", "added", "plays", "label_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Misery Business"], ["artist", "Paramore"], ["genre", "Rock"], ["year", 2008], ["added", "2015-11-02"], ["plays", 0], ["label_id", 1], ["created_at", "2015-11-02 21:47:48.281228"], ["updated_at", "2015-11-02 21:47:48.281228"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/albums/108
+Completed 302 Found in 18ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/albums/108" for ::1 at 2015-11-02 14:47:48 -0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"108"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1[0m  [["id", 108]]
+  [1m[35mLabel Load (0.1ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered albums/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 61ms (Views: 59.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/album.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/labels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/artist.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/label.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/scaffolds.self-7993ae6b14bcd7943d9f20296226ba65379e7335a562e84baaa09b3af482d227.css?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/songs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/album.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/artist.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/labels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/label.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/songs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 14:47:48 -0700
+
+
+Started GET "/albums" for ::1 at 2015-11-02 14:47:51 -0700
+Processing by AlbumsController#index as HTML
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT "albums".* FROM "albums"[0m
+  [1m[35mLabel Load (0.0ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 17]]
+  [1m[36mLabel Load (0.0ms)[0m  [1mSELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered albums/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 63ms (Views: 62.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/labels" for ::1 at 2015-11-02 14:47:54 -0700
+Processing by LabelsController#index as HTML
+  [1m[35mLabel Load (0.1ms)[0m  SELECT "labels".* FROM "labels"
+  Rendered labels/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 60ms (Views: 59.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/album.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/labels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/artist.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/label.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/scaffolds.self-7993ae6b14bcd7943d9f20296226ba65379e7335a562e84baaa09b3af482d227.css?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/songs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/album.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/artist.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/label.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/labels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/songs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 14:47:55 -0700
+
+
+Started GET "/albums/new" for ::1 at 2015-11-02 14:48:00 -0700
+Processing by AlbumsController#new as HTML
+  [1m[36mLabel Load (0.1ms)[0m  [1mSELECT "labels".* FROM "labels"[0m
+  Rendered albums/_form.html.erb (1.9ms)
+  Rendered albums/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 67ms (Views: 66.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/albums" for ::1 at 2015-11-02 14:48:58 -0700
+Processing by AlbumsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7f41j3UJxkncqSG6ew3JVDdr2US4GAdY55p+2T+FA7piNJMrI4D8XsgoguFDGCQAHtceDqi4S3f+wHbYZDW13g==", "new_label"=>"Ardent", "album"=>{"title"=>"Comatose", "artist"=>"Skillet", "genre"=>"Christian", "year"=>"2008", "added"=>"2015-11-02", "plays"=>"0"}, "create"=>"Create"}
+  [1m[35mLabel Exists (0.1ms)[0m  SELECT  1 AS one FROM "labels" WHERE "labels"."name" = ? LIMIT 1  [["name", "Ardent"]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "labels" ("name", "created_at", "updated_at") VALUES (?, ?, ?)  [["name", "Ardent"], ["created_at", "2015-11-02 21:48:58.125796"], ["updated_at", "2015-11-02 21:48:58.125796"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "albums" ("title", "artist", "genre", "year", "added", "plays", "label_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Comatose"], ["artist", "Skillet"], ["genre", "Christian"], ["year", 2008], ["added", "2015-11-02"], ["plays", 0], ["label_id", 25], ["created_at", "2015-11-02 21:48:58.127987"], ["updated_at", "2015-11-02 21:48:58.127987"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/albums/109
+Completed 302 Found in 7ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/albums/109" for ::1 at 2015-11-02 14:48:58 -0700
+Processing by AlbumsController#show as HTML
+  Parameters: {"id"=>"109"}
+  [1m[36mAlbum Load (0.1ms)[0m  [1mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = ? LIMIT 1[0m  [["id", 109]]
+  [1m[35mLabel Load (0.1ms)[0m  SELECT  "labels".* FROM "labels" WHERE "labels"."id" = ? LIMIT 1  [["id", 25]]
+  Rendered albums/show.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 72ms (Views: 71.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/labels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/artist.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/label.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/scaffolds.self-7993ae6b14bcd7943d9f20296226ba65379e7335a562e84baaa09b3af482d227.css?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/album.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/songs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/album.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/artist.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/label.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/labels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/songs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 14:48:58 -0700
+
+
+Started GET "/labels" for ::1 at 2015-11-02 14:49:02 -0700
+Processing by LabelsController#index as HTML
+  [1m[36mLabel Load (0.1ms)[0m  [1mSELECT "labels".* FROM "labels"[0m
+  Rendered labels/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 79ms (Views: 78.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/album.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/albums.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/artists.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/label.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/artist.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/labels.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/scaffolds.self-7993ae6b14bcd7943d9f20296226ba65379e7335a562e84baaa09b3af482d227.css?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/songs.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/album.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/artist.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/albums.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/label.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/labels.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/songs.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700
+
+
+Started GET "/assets/artists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-11-02 14:49:02 -0700

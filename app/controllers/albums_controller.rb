@@ -32,10 +32,10 @@ class AlbumsController < ApplicationController
     @label = Label.new(label_params)
     @album = Album.new(album_params) 
 
-    # if Label.exists?(:name => params[:new_label])
-    #   @label = Label.where(:name => label_params[:name]).first
-    #   @album.label_id = @label.id
-    # end   
+    if Label.exists?(:name => label_params[:name])
+      @label = Label.where(:name => label_params[:name]).first
+      @album.label_id = @label.id
+    end   
 
     if @label.save(validate: false)   
       @album.label_id = @label.id
