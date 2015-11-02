@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag "albumtracker" %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @album.label %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @album.title %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @album.artist %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @album.genre %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @album.year %>
+</p>
+
+<p>
+  <strong>Added:</strong>
+  <%= @album.added %>
+</p>
+
+<p>
+  <strong>Plays:</strong>
+  <%= @album.plays %>
+</p>
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Destroy', @album, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Back', albums_path %>

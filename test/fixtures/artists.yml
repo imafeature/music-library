@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  label_id: 
+  name: MyString
+  founded: 1
+
+two:
+  label_id: 
+  name: MyString
+  founded: 1

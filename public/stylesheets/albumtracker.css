@@ -1,0 +1,41 @@
+  @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
+
+h1{
+	font-family: Roboto;
+	font-weight: 300;
+}
+
+table { 
+color: #333;
+font-family: Roboto;
+width: 75vw; 
+text-align: center;
+border-collapse: 
+collapse; border-spacing: 0; 
+}
+
+td, th { 
+border: 1px solid transparent; /* No more visible border */
+height: 30px; 
+}
+
+td:hover, th:hover{
+transition: all 0.3s;  /* Simple transition for hover effect */
+}
+
+th {
+background: #DFDFDF;  /* Darken header a bit */
+font-weight: 500;
+}
+
+td {
+	background: #FAFAFA;
+}
+
+/* Cells in even rows (2,4,6...) are one color */ 
+tr:nth-child(even) td { background: #F1F1F1; }   
+
+/* Cells in odd rows (1,3,5...) are another (excludes header cells)  */ 
+tr:nth-child(odd) td { background: #FEFEFE; }  
+
+tr td:hover { background: #666; color: #FFF; } /* Hover cell effect! */
