@@ -1,4 +1,4 @@
-<%= form_for(@album) do |f| %>
+<%= form_for @album do |f| %>
 
   <% if @album.errors.any? %>
     <div id="error_explanation">
@@ -17,11 +17,12 @@
       <%= f.select(:label_id, @labels, { include_blank: true }) %>
   </div> -->
 
-  <div class="field">
-      <div id="addNew">
-        <%= render :partial => '/labels/form2' %>
-      </div>
-      <br><br/>
+  <div class="field" id="addNew">
+     <%= fields_for @label do |l| %>
+        <%= l.label :name, "New Record Label" %><br>
+        <%= l.text_field(:name, name: "new_label") %>
+    <% end %>
+     <br><br/>
   </div>
 
   <div class="field">
@@ -53,7 +54,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= submit_tag "Create", :name => 'create' %>
   </div>
 
 <% end %>

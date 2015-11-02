@@ -26,19 +26,28 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(album_params)
-    @label = Label.new(params[:name])
-    @labels = Label.all
+    label_params = {:name => params[:new_label]}
 
-    respond_to do |format|
-      if @album.save &&  @label.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
+    @labels = Label.all
+    @label = Label.new(label_params)
+    @album = Album.new(album_params) 
+
+    # if Label.exists?(:name => params[:new_label])
+    #   @label = Label.where(:name => label_params[:name]).first
+    #   @album.label_id = @label.id
+    # end   
+
+    if @label.save(validate: false)   
+      @album.label_id = @label.id
+      if @album.save
+        redirect_to @album
       else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+        render 'new'
       end
+    else
+      render 'new'
     end
+
   end
 
   # PATCH/PUT /albums/1
@@ -74,8 +83,13 @@ class AlbumsController < ApplicationController
       @album = Album.find(params[:id])
     end
 
+    def set_label
+      @album = Album.find(params[:id])
+
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:label_id, :title, :artist, :genre, :year, :added, :plays, :label_attributes => [:id, :name])
+      params.require(:album).permit(:label, :label_id, :title, :artist, :genre, :year, :added, :plays, :label_attributes => [:label, :id, :name])
     end
 end
