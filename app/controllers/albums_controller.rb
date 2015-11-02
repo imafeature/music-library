@@ -37,17 +37,21 @@ class AlbumsController < ApplicationController
       @album.label_id = @label.id
     end   
 
-    if @label.save(validate: false)   
+    # TODO Parker: This should be less redundant
+    if @label.save 
       @album.label_id = @label.id
       if @album.save
-        redirect_to @album
+        redirect_to @album and return
       else
         render 'new'
       end
-    else
-      render 'new'
+    else 
+      if @album.save
+        redirect_to @album and return
+      else
+        render 'new'
+      end
     end
-
   end
 
   # PATCH/PUT /albums/1
