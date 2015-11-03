@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   resources :songs
   resources :albums do
-    resources :albums_label, :albums_artists, :artists
+    resources :albums_label, :album_artist, :artists
   end
   resources :artists
-    resources :artists_albums, :albums
+    resources :artist_album
   resources :labels
 
   # The priority is based upon order of creation: first created -> highest priority.

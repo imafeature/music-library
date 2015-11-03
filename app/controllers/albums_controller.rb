@@ -15,21 +15,28 @@ class AlbumsController < ApplicationController
   # GET /albums/new
   def new
     @album = Album.new
+    @artist = Artist.new
     @label = Label.new
     @labels = Label.all.map{ |l| [ l.name, l.id ] }
   end
 
   # GET /albums/1/edit
-  def edit
+  def edit 
+    @album = Album.find(params[:id])
+    @artist = @album.artist || Artist.new
+    @label = @album.label || Label.new
+    @labels = Label.all.map{ |l| [ l.name, l.id ] }
   end
 
   # POST /albums
   # POST /albums.json
   def create
     label_params = {:name => params[:new_label]}
+    artist_params = {:name => params[:artist_name]}
 
     @labels = Label.all
     @label = Label.new(label_params)
+    @artist = Artist.new(artist_params)
     @album = Album.new(album_params) 
 
     if Label.exists?(:name => label_params[:name])
@@ -37,26 +44,51 @@ class AlbumsController < ApplicationController
       @album.label_id = @label.id
     end   
 
+    if Artist.exists?(:name => artist_params[:name])
+      @artist = Artist.where(:name => artist_params[:name]).first
+      @album.artist_id = @artist_id
+    end  
+
     # TODO Parker: This should be less redundant
-    if @label.save 
-      @album.label_id = @label.id
+    if @artist.save
+      @album.artist = @artist
       if @album.save
         redirect_to @album and return
       else
         render 'new'
       end
-    else 
-      if @album.save
-        redirect_to @album and return
-      else
-        render 'new'
-      end
+    else
+      render 'new'
     end
   end
 
   # PATCH/PUT /albums/1
   # PATCH/PUT /albums/1.json
   def update
+
+    label_params = {:name => params[:new_label]}
+    artist_params = {:name => params[:artist_name]}
+
+    @labels = Label.all
+    @label = (@album.label.nil?) ? Label.new(label_params) : @album.label
+    @artist = (@album.artist.nil?) ? Artist.new(artist_params) : @album.artist 
+
+    if Label.exists?(:name => label_params[:name])
+      @label = Label.where(:name => label_params[:name]).first
+      @album.label_id = @label.id
+    else
+      @label.save
+      @album.label_id = @label.id
+    end   
+
+    if Artist.exists?(:name => artist_params[:name])
+      @artist = Artist.where(:name => artist_params[:name]).first
+      @album.artist = @artist
+      else
+        @artist.save
+        @album.artist = @artist
+    end
+    
     respond_to do |format|
       if @album.update(album_params)
         format.html { redirect_to @album, notice: 'Album was successfully updated.' }
@@ -94,6 +126,6 @@ class AlbumsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def album_params
-      params.require(:album).permit(:label, :label_id, :title, :artist, :genre, :year, :added, :plays, :label_attributes => [:label, :id, :name])
+      params.require(:album).permit(:label, :label_id, :title, :artist, :genre, :year, :added, :plays, :label_attributes => [:label, :id, :name], :artist_attributes => [:id, :artist_id, :name])
     end
 end

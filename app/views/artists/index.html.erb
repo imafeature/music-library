@@ -6,9 +6,10 @@
 <table>
   <thead>
     <tr>
-      <th>Label</th>
       <th>Name</th>
-      <th>Founded</th>
+      <th>Active From</th>
+      <th>Until</th>
+      <th>Albums</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +17,10 @@
   <tbody>
     <% @artists.each do |artist| %>
       <tr>
-        <td><%= artist.label %></td>
         <td><%= artist.name %></td>
-        <td><%= artist.founded %></td>
+        <td><%= artist.active_from %></td>
+        <td><%= artist.active_until %></td>
+        <td><%= artist.albums.name %></td>
         <td><%= link_to 'Show', artist %></td>
         <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
         <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -13,7 +13,7 @@
 
 <p>
   <strong>Artist:</strong>
-  <%= @album.artist %>
+  <%= @album.artist.name unless @album.artist.nil? %>
 </p>
 
 <p>
@@ -36,6 +36,6 @@
   <%= @album.plays %>
 </p>
 
-<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Edit', edit_album_path(@album, @label, @artist) %> |
 <%= link_to 'Destroy', @album, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', albums_path %>

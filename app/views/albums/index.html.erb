@@ -22,7 +22,7 @@
       <tr>
         <td><%= album.label.name unless album.label.nil? %></td>
         <td><%= album.title %></td>
-        <td><%= album.artist %></td>
+        <td><%= album.artist.name unless album.artist.nil?  %></td>
         <td><%= album.genre %></td>
         <td><%= album.year %></td>
         <td><%= album.added %></td>

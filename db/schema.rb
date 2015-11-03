@@ -11,12 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151102224229) do
+ActiveRecord::Schema.define(version: 20151103010750) do
+
+  create_table "album_artist", id: false, force: :cascade do |t|
+    t.integer "album_id"
+    t.integer "artist_id"
+  end
+
+  add_index "album_artist", ["album_id", "artist_id"], name: "index_album_artist_on_album_id_and_artist_id", unique: true
 
   create_table "albums", force: :cascade do |t|
     t.integer  "label_id"
     t.string   "title"
-    t.string   "artist"
+    t.integer  "artist_id"
     t.string   "genre"
     t.integer  "year"
     t.date     "added"
@@ -44,11 +51,19 @@ ActiveRecord::Schema.define(version: 20151102224229) do
 
   add_index "albums_label", ["album_id", "label_id"], name: "index_albums_label_on_album_id_and_label_id", unique: true
 
+  create_table "artist_album", id: false, force: :cascade do |t|
+    t.integer "album_id"
+    t.integer "artist_id"
+  end
+
+  add_index "artist_album", ["album_id", "artist_id"], name: "index_artist_album_on_album_id_and_artist_id", unique: true
+
   create_table "artists", force: :cascade do |t|
     t.string   "name"
-    t.integer  "founded"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "active_from"
+    t.integer  "active_until"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "artists_albums", id: false, force: :cascade do |t|

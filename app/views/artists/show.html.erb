@@ -2,18 +2,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Label:</strong>
-  <%= @artist.label %>
-</p>
-
-<p>
   <strong>Name:</strong>
   <%= @artist.name %>
 </p>
 
 <p>
-  <strong>Founded:</strong>
-  <%= @artist.founded %>
+  <strong>Active From:</strong>
+  <%= @artist.active_from %>
+</p>
+
+<p>
+  <strong>Until:</strong>
+  <%= @artist.active_until %>
 </p>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |

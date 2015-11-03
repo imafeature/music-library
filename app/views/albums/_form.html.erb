@@ -12,12 +12,12 @@
     </div>
   <% end %>
 
-  <!-- <div class="field">
+  <!--<div class="field">
       <%= f.label :label, "Record Label" %>
       <%= f.select(:label_id, @labels, { include_blank: true }) %>
-  </div> -->
+  </div>-->
 
-  <div class="field" id="addNew">
+  <div class="field" id="newLabel">
      <%= fields_for @label do |l| %>
         <%= l.label :name, "New Record Label" %><br>
         <%= l.text_field(:name, name: "new_label") %>
@@ -25,15 +25,22 @@
      <br><br/>
   </div>
 
+
+  
+
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
 
-  <div class="field">
-    <%= f.label :artist %><br>
-    <%= f.text_field :artist %>
-  </div>
+  <%= fields_for @artist do |a| %>
+
+    <div class="field" >
+      <%= a.label :name, "Artist" %><br>
+      <%= a.text_field(:name, name: "artist_name") %>
+    </div> 
+    
+  <% end %>
 
   <div class="field">
     <%= f.label :genre %><br>
@@ -54,7 +61,7 @@
   </div>
 
   <div class="actions">
-    <%= submit_tag "Create", :name => 'create' %>
+    <%= f.submit "Save" %>
   </div>
 
 <% end %>
