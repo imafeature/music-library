@@ -10,6 +10,7 @@ class LabelsController < ApplicationController
   # GET /labels/1
   # GET /labels/1.json
   def show
+    @albums = Album.where(:label => @label)
   end
 
   # GET /labels/new

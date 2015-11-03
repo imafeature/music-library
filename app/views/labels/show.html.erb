@@ -5,6 +5,16 @@
   <strong>Name:</strong>
   <%= @label.name %>
 </p>
+<p>
+  <strong>Albums:</strong>
+  <ul style="margin-top:-10px">
+	<% @albums.each do |album| %>
+		<li><%= link_to album.title + " by #{album.artist.name}", album_path(album) %></li>
+	<% end %>
+	<li style="list-style-type:none;padding-top:10px"><%= link_to 'Add another album to label?', new_album_path %></li>	
+  </ul>
+</p>
 
 <%= link_to 'Edit', edit_label_path(@label) %> |
+<%= link_to 'Destroy', @label, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', labels_path %>

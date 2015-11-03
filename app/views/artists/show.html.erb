@@ -7,6 +7,16 @@
 </p>
 
 <p>
+  <strong>Albums:</strong>
+  <ul style="margin-top:-10px">
+	<% @albums.each do |album| %>
+		<li><%= link_to album.title, album_path(album) %></li>
+	<% end %>
+	<li style="list-style-type:none;padding-top:10px"><%= link_to 'Add another album by artist?', new_album_path %></li>	
+  </ul>
+</p>
+
+<p>
   <strong>Active From:</strong>
   <%= @artist.active_from %>
 </p>
@@ -17,4 +27,5 @@
 </p>
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Destroy', @artist, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', artists_path %>

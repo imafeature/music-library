@@ -10,6 +10,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1
   # GET /albums/1.json
   def show
+    @artist = @album.artist
   end
 
   # GET /albums/new
@@ -64,7 +65,6 @@ class AlbumsController < ApplicationController
       end
     end
 
-    # TODO Parker: This should be less friggin' ugly and inefficient
     if @album.save
       redirect_to @album and return
     else
@@ -108,7 +108,7 @@ class AlbumsController < ApplicationController
         format.json { render :show, status: :ok, location: @album }
       else
         format.html { render :edit }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+        format.json { render json: [@album.errors, @album.artist.errors, @album.label.errors], status: :unprocessable_entity }
       end
     end
   end

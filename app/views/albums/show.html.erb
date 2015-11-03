@@ -2,18 +2,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Label:</strong>
-  <%= @album.label.name unless @album.label.nil? %>
-</p>
-
-<p>
   <strong>Title:</strong>
   <%= @album.title %>
 </p>
 
 <p>
   <strong>Artist:</strong>
-  <%= @album.artist.name unless @album.artist.nil? %>
+<!--   TODO Parker: Make this conditional -->
+  <%= link_to(@artist.name, artist_path(@artist))  %>
+</p>
+
+<p>
+  <strong>Record Label:</strong>
+  <%= @album.label.name unless @album.label.nil? %>
 </p>
 
 <p>

@@ -6,9 +6,9 @@
 <table>
   <thead>
     <tr>
-      <th>Label</th>
       <th>Title</th>
-      <th>Artist</th>
+      <th><%= link_to 'Artist', artists_index_path %></th>
+      <th><%= link_to 'Record Label', labels_index_path %></th>
       <th>Genre</th>
       <th>Year</th>
       <th>Added</th>
@@ -20,9 +20,9 @@
   <tbody>
     <% @albums.each do |album| %>
       <tr>
-        <td><%= album.label.name unless album.label.nil? %></td>
-        <td><%= album.title %></td>
+        <td><%= link_to album.title, album %></td>
         <td><%= album.artist.name unless album.artist.nil?  %></td>
+        <td><%= album.label.name unless album.label.nil? %></td>
         <td><%= album.genre %></td>
         <td><%= album.year %></td>
         <td><%= album.added %></td>
