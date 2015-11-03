@@ -52,13 +52,19 @@ class AlbumsController < ApplicationController
     # TODO Parker: This should be less redundant
     if @artist.save
       @album.artist = @artist
-      if @album.save
-        redirect_to @album and return
-      else
-        render 'new'
+      if Album.exists?(:title => album_params[:title])  
+        if Album.exists?(:artist => album_params[:artist])  
+          @album = Album.where(:title => album_params[:title], :artist => album_params[:artist]).first
+          redirect_to @album and return
+        end
+      else  
+        if @album.save
+          redirect_to @album and return
+        else
+          render 'new' and return
+        end
       end
-    else
-      render 'new'
+      redirect_to @album and return
     end
   end
 
