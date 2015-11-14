@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151103010750) do
+ActiveRecord::Schema.define(version: 20151114211924) do
 
   create_table "album_artist", id: false, force: :cascade do |t|
     t.integer "album_id"
@@ -89,6 +89,41 @@ ActiveRecord::Schema.define(version: 20151103010750) do
     t.integer  "plays"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_albums", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "albums_id", null: false
+    t.integer "album_id"
+  end
+
+  add_index "user_albums", ["user_id", "album_id"], name: "index_user_albums_on_user_id_and_album_id", unique: true
+
+  create_table "user_artists", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "artists_id", null: false
+    t.integer "artist_id"
+  end
+
+  add_index "user_artists", ["user_id", "artist_id"], name: "index_user_artists_on_user_id_and_artist_id", unique: true
+
+  create_table "user_labels", id: false, force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "labels_id", null: false
+    t.integer "label_id"
+  end
+
+  add_index "user_labels", ["user_id", "label_id"], name: "index_user_labels_on_user_id_and_label_id", unique: true
+
+  create_table "users", force: :cascade do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "username"
+    t.string   "email"
+    t.string   "encrypted_password"
+    t.string   "salt"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
 end

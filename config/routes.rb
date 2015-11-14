@@ -1,16 +1,21 @@
 Rails.application.routes.draw do
 
-  get 'labels/index'
-  get 'albums/index'
-  get 'artists/index'
-
-  resources :songs
+  resources :users do
+    resources :user_albums, :user_labels, :user_artists
+  end
   resources :albums do
     resources :albums_label, :album_artist, :artists
   end
   resources :artists
     resources :artist_album
-  resources :labels
+  resources :songs
+  resources :labels  
+
+  get 'labels/index'
+  get 'albums/index'
+  get 'artists/index'
+
+
 
   root 'albums#index'
 
