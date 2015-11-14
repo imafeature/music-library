@@ -11,13 +11,12 @@ Rails.application.routes.draw do
   resources :songs
   resources :labels  
 
+  get 'users/index'
   get 'labels/index'
   get 'albums/index'
   get 'artists/index'
 
-
-
-  root 'albums#index'
+  root 'users#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

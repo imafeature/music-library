@@ -1,6 +1,7 @@
 <h1>Register New User</h1>
 
 <%= form_for(@user) do |f| %>
+
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,14 +12,16 @@
       <% end %>
       </ul>
     </div>
+  <% end %>
 
-    <p> Username:</br> <%= f.text_field :username%> </p>
-    <p> Email:</br> <%= f.text_field :email%> </p>
-    <p> Password:</br> <%= f.password_field :password%></p>
-    <p> Password Confirmation:</br> <%= f.password_field :password_confirmation%> </p>
+  <p> Username:</br> <%= f.text_field :username %> </p>
+  <p> Email:</br> <%= f.text_field :email %> </p>
+  <p> Password:</br> <%= f.password_field :password %></p>
+  <p> Password Confirmation:</br> <%= f.password_field :password_confirmation %> </p>
+
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit %> Already registered? <%= link_to 'Sign In Here', users_path %>
   </div>
+
 <% end %>
 
-<%= link_to 'Back', users_path %>

@@ -3,15 +3,28 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
+  
+  def index
+    @users = User.all
+  end
+
   def new
     @user = User.new 
   end
 
+  def show
+    @users = User.all
+    render 'index'
+  end
+
   def create
-    @user = User.new(params[:user])
+    @users = User.all
+    @user = User.new(user_params)
     if @user.save
+      render "index"
       flash[:notice] = "You signed up successfully"
-      flash[:color]= "valid"
+      flash[:color]= "valid" 
+      return
     else
       flash[:notice] = "Form is invalid"
       flash[:color]= "invalid"
@@ -27,6 +40,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:fname, :lname, :email, :username, :encrypted_password, :artist_id, :album_id, :label_id)
+      params.require(:user).permit(:fname, :lname, :username, :email, :encrypted_password, :password, :password_confirmation, :salt, :user_id, :artist_id, :album_id, :label_id)
     end
 end
