@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151115002449) do
+ActiveRecord::Schema.define(version: 20151114211924) do
 
   create_table "album_artist", id: false, force: :cascade do |t|
     t.integer "album_id"
@@ -51,14 +51,6 @@ ActiveRecord::Schema.define(version: 20151115002449) do
 
   add_index "albums_label", ["album_id", "label_id"], name: "index_albums_label_on_album_id_and_label_id", unique: true
 
-  create_table "albums_users", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "albums_id", null: false
-    t.integer "album_id"
-  end
-
-  add_index "albums_users", ["user_id", "album_id"], name: "index_albums_users_on_user_id_and_album_id", unique: true
-
   create_table "artist_album", id: false, force: :cascade do |t|
     t.integer "album_id"
     t.integer "artist_id"
@@ -83,27 +75,11 @@ ActiveRecord::Schema.define(version: 20151115002449) do
 
   add_index "artists_albums", ["album_id", "artist_id"], name: "index_artists_albums_on_album_id_and_artist_id", unique: true
 
-  create_table "artists_users", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "artists_id", null: false
-    t.integer "artist_id"
-  end
-
-  add_index "artists_users", ["user_id", "artist_id"], name: "index_artists_users_on_user_id_and_artist_id", unique: true
-
   create_table "labels", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "labels_users", id: false, force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "labels_id", null: false
-    t.integer "label_id"
-  end
-
-  add_index "labels_users", ["user_id", "label_id"], name: "index_labels_users_on_user_id_and_label_id", unique: true
 
   create_table "songs", force: :cascade do |t|
     t.string   "title"
