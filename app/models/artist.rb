@@ -7,6 +7,7 @@ class Artist < ActiveRecord::Base
   belongs_to :album
 
   #has_and_belongs_to_many :songs
-  has_and_belongs_to_many :users, :albums
+  has_and_belongs_to_many :users
+  has_and_belongs_to_many :albums
   accepts_nested_attributes_for :albums
 end

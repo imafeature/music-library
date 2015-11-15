@@ -13,8 +13,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @users = User.all
-    render 'index'
+    @labels = @user.labels
+    @albums = @user.albums
+    @artists = @user.artists
   end
 
   def create
@@ -26,10 +27,8 @@ class UsersController < ApplicationController
       flash[:color]= "valid" 
       return
     else
-      flash[:notice] = "Form is invalid"
-      flash[:color]= "invalid"
+      render "new" and return
     end
-    render "new"
   end
 
   private

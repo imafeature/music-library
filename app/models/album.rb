@@ -8,7 +8,8 @@ class Album < ActiveRecord::Base
 	belongs_to :artist, :autosave => true
 
 	#has_and_belongs_to_many :songs
-	has_and_belongs_to_many :users, :artists, :autosave => true 
+	has_and_belongs_to_many :users, :autosave => true 
+	has_and_belongs_to_many :artists, :autosave => true 
 
 	accepts_nested_attributes_for :artist, :artists, :label#, :songs
 end
